@@ -3,22 +3,23 @@
     <div class="container">
         <div class="col">
             <header class="header-block text-center background-metallics">
-                <div class="header-block-meta pb-0 mb-0">Photo Gallery</div>
-                <h2 class="header-block-title text-uppercase">Best Moment Shoots</h2>
+                <div class="header-block-meta pb-0 mb-0"><?php echo esc_attr($subtitle); ?></div>
+                <h2 class="header-block-title text-uppercase"><?php echo esc_attr($title); ?></h2>
             </header>
         </div>
     </div>
 
     <!-- Swiper -->
+  <?php if( ! empty( $images ) ) : ?>
     <div class="swiper-container gallery-slide-container pt-4">
         <div class="swiper-wrapper my-gallery"> 
+        <?php foreach( $images as $image ) : ?>
         <p class="imglist">
-        
             
             <div class="swiper-slide">
-                <a href="<?php echo get_template_directory_uri();?>/assets/images/wedding/gallery-01.jpg" data-fancybox="images">
+                <?php echo wp_get_attachment_image( $image['image'],'full', false, array('title' => $image['title']) );?>
                     <div class="thumb">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/wedding/gallery-01.jpg">
+                        <?php echo wp_get_attachment_image( $image['image'],'full', false, array('title' => $image['title']) );?>
                     </div>
                     <div class="overlay d-flex align-items-center">
                         <div class="gallery-caption mx-auto">
@@ -27,58 +28,13 @@
                 </a>
             </div>
             
-            <div class="swiper-slide">
-                <a href="<?php echo get_template_directory_uri();?>/assets/images/wedding/gallery-01.jpg" data-fancybox="images">
-                    <div class="thumb">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/wedding/gallery-02.jpg">
-                    </div>
-                    <div class="overlay d-flex align-items-center">
-                        <div class="gallery-caption mx-auto">
-                            <span>PREWEDDING</span> - MIAMI | OCTOBER, 19th | 2020</div>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="swiper-slide">
-                <a href="<?php echo get_template_directory_uri();?>/assets/images/wedding/gallery-01.jpg" data-fancybox="images">
-                    <div class="thumb">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/wedding/gallery-03.jpg">
-                    </div>
-                    <div class="overlay d-flex align-items-center">
-                        <div class="gallery-caption mx-auto">
-                            <span>PREWEDDING</span> - NEWY YORK | OCTOBER, 10th | 2020</div>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="swiper-slide">
-                <a href="<?php echo get_template_directory_uri();?>/assets/images/wedding/gallery-01.jpg" data-fancybox="images">
-                    <div class="thumb">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/wedding/gallery-04.jpg">
-                    </div>
-                    <div class="overlay d-flex align-items-center">
-                        <div class="gallery-caption mx-auto">
-                            <span>PREWEDDING</span> - GEORGIA | OCTOBER, 9th | 2020</div>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="swiper-slide">
-                <a href="<?php echo get_template_directory_uri();?>/assets/images/wedding/gallery-01.jpg" data-fancybox="images">
-                    <div class="thumb">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/wedding/gallery-05.jpg">
-                    </div>
-                    <div class="overlay d-flex align-items-center">
-                        <div class="gallery-caption mx-auto">
-                            <span>PREWEDDING</span> - HAWWAI | OCTOBER, 5th | 2020</div>
-                            <span class="icon-wedding-rings"></span>
-                    </div>
-                </a>
-            </div>
         </p>
+        <?php endforeach; ?>
         </div>
         
         <!-- Add Pagination -->
         <div class="gallery-slide-pagination swiper-pagination mt-5 pb-0"></div>
+
+    <?php endif; ?>
     </div>
 </section>
