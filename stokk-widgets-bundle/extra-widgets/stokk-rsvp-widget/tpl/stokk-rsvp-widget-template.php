@@ -20,26 +20,26 @@
                         <ul class="list-unstyled">
                             <li class="media mb-3">
                             <?php 
-                            if($rsvp_left['rsvp_one_icon'][0]){
-                                echo '<img class="mr-3 pt-1" src="'.$rsvp_left['rsvp_one_icon'][0].'" alt="Generic placeholder image">';
+                            if($rsvp_left['subrsvp_icon_a'][0]){
+                                echo '<img class="mr-3 pt-1" src="'.$rsvp_left['subrsvp_icon_a'][0].'" alt="Generic placeholder image">';
                             }
                             ?>
                                 <div class="media-body">
-                                    <div class="text-h4 mt-0 mb-1 text-color-primary "><?php echo esc_html($rsvp_left['rsvp_one_content_title']); ?></div>
-                                    <div class="text-h5 "><?php echo esc_html($rsvp_left['rsvp_one_content_subtitle']); ?></div>
+                                    <div class="text-h4 mt-0 mb-1 text-color-primary "><?php echo esc_html($rsvp_left['subrsvp_title_a']); ?></div>
+                                    <div class="text-h5 "><?php echo esc_html($rsvp_left['subrsvp_subtitle_a']); ?></div>
                                 </div> 
                             </li>
                             <li class="media">
                                 
                             <?php 
-                            if($rsvp_left['rsvp_two_icon'][0]){
-                                echo '<img class="mr-3 pt-1" src="'.$rsvp_left['rsvp_two_icon'][0].'" alt="Generic placeholder image">';
+                            if($rsvp_left['subrsvp_icon_b'][0]){
+                                echo '<img class="mr-3 pt-1" src="'.$rsvp_left['subrsvp_icon_b'][0].'" alt="Generic placeholder image">';
                             }
                             ?>
                             
                                 <div class="media-body">
-                                    <div class="text-h4 mt-0 mb-1 text-color-primary "><?php echo esc_html($rsvp_left['rsvp_two_content_title']); ?></div>
-                                    <div class="text-h5 "><?php echo esc_html($rsvp_left['rsvp_two_content_subtitle']); ?></div>
+                                    <div class="text-h4 mt-0 mb-1 text-color-primary "><?php echo esc_html($rsvp_left['subrsvp_title_b']); ?></div>
+                                    <div class="text-h5 "><?php echo esc_html($rsvp_left['subrsvp_subtitle_b']); ?></div>
                                 </div>
                             </li>
                         </ul>
@@ -59,24 +59,24 @@
                         <ul class="list-unstyled">
                             <li class="media mb-3">
                             <?php 
-                            if($rsvp_right['rsvp_one_icon'][0]){
-                                echo '<img class="mr-3 pt-1" src="'.$rsvp_right['rsvp_one_icon'][0].'" alt="Generic placeholder image">';
+                            if($rsvp_right['subrsvp_icon_a'][0]){
+                                echo '<img class="mr-3 pt-1" src="'.$rsvp_right['subrsvp_icon_a'][0].'" alt="Generic placeholder image">';
                             }
                             ?>
                                 <div class="media-body">
-                                    <div class="text-h4 mt-0 mb-1 text-color-primary "><?php echo esc_html($rsvp_right['rsvp_one_content_title']); ?></div>
-                                    <div class="text-h5 "><?php echo esc_html($rsvp_right['rsvp_one_content_subtitle']); ?></div>
+                                    <div class="text-h4 mt-0 mb-1 text-color-primary "><?php echo esc_html($rsvp_right['subrsvp_title_a']); ?></div>
+                                    <div class="text-h5 "><?php echo esc_html($rsvp_right['subrsvp_subtitle_a']); ?></div>
                                 </div>
                             </li>
                             <li class="media">
                             <?php 
-                            if($rsvp_right['rsvp_two_icon'][0]){
-                                echo '<img class="mr-3 pt-1" src="'.$rsvp_right['rsvp_two_icon'][0].'" alt="Generic placeholder image">';
+                            if($rsvp_right['subrsvp_icon_b'][0]){
+                                echo '<img class="mr-3 pt-1" src="'.$rsvp_left['subrsvp_icon_b'][0].'" alt="Generic placeholder image">';
                             }
                             ?>
                                 <div class="media-body">
-                                    <div class="text-h4 mt-0 mb-1 text-color-primary "><?php echo esc_html($rsvp_right['rsvp_two_content_title']); ?></div>
-                                    <div class="text-h5 "><?php echo esc_html($rsvp_right['rsvp_two_content_title']); ?></div>
+                                    <div class="text-h4 mt-0 mb-1 text-color-primary "><?php echo esc_html($rsvp_right['subrsvp_subtitle_b']); ?></div>
+                                    <div class="text-h5 "><?php echo esc_html($rsvp_right['subrsvp_title_b']); ?></div>
                                 </div>
                             </li>
                         </ul>
