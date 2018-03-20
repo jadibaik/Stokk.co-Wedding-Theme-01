@@ -2,7 +2,12 @@
 <section class="air-block section rsvp background-metallics" id="rsvp">
     <div class="container">
         <div class="col-12">
-            <div class="rsvp-wrapper" style="background-image:url('<?php echo get_template_directory_uri();?>/assets/images/wedding/bg-rsvp.jpg');">
+            
+            <?php 
+                if($background_image['rsvp_background'][0]){
+                    echo '<div class="rsvp-wrapper" style="background-image:url('.$background_image['rsvp_background'][0].');">';
+                }
+            ?>
                 <!-- rsvp card -->
                 <div class="rsvp-inner">
                     <div class="rsvp-card float-lg-left">

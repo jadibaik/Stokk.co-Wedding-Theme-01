@@ -194,6 +194,19 @@ class Stokk_Rsvp_Widget extends SiteOrigin_Widget {
 					),
 				)
 			),
+			'background_image' => array(
+				'type' => 'section',
+				'label' => __('Background Image', 'so-widgets-bundle'),
+				'hide' => true,
+				'fields' => array(
+					'rsvp_background' => array(
+						'type' => 'media',
+						'label' => __('Background RSVP', 'so-widgets-bundle'),
+						'library' => 'image',
+						'fallback' => true,
+					),
+				)
+			),
 		);
 	}
 
@@ -245,6 +258,9 @@ class Stokk_Rsvp_Widget extends SiteOrigin_Widget {
 				'link'=>$instance['button_link']['link'],
 				'caption'=>$instance['button_link']['caption']
 			),
+			'background_image' => array(
+				'rsvp_background'=>$this->stokk_src_image($instance['background_image']['rsvp_background']),
+			)
 		);
 	}
 
