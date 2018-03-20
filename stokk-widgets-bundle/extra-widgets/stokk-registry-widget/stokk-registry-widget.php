@@ -43,8 +43,8 @@ class Stokk_Registry_Widget extends SiteOrigin_Widget {
 					),
 					'registry_repeater' => array(
 						'type' => 'repeater',
-						'label' => __( 'Registry Icons' , 'widget-form-fields-text-domain' ),
-						'item_name'  => __( 'Registry Icon', 'siteorigin-widgets' ),
+						'label' => __( 'Registry Icons' , 'so-widgets-bundle' ),
+						'item_name'  => __( 'Registry Icon', 'so-widgets-bundle' ),
 						'item_label' => array(
 							'selector'     => "[id*='label']",
 							'update_event' => 'change',
@@ -78,7 +78,7 @@ class Stokk_Registry_Widget extends SiteOrigin_Widget {
 					),
 					'description' => array(
 						'type' => 'tinymce',
-						'label' => __( 'Testimonial Description', 'widget-form-fields-text-domain' ),
+						'label' => __( 'Testimonial Description', 'so-widgets-bundle' ),
 						'default' => 'As summer approached, we learned that we would be interning across the street from each other. You can read our love story from each other and give us some comments would great, cheers! HAPPY WEDDING DAY, Wish you all the best <br><br>MIKE - BROTHERS',
 						'rows' => 10,
 						'default_editor' => 'html',
