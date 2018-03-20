@@ -206,7 +206,7 @@ class Stokk_Rsvp_Widget extends SiteOrigin_Widget {
 						'fallback' => true,
 					),
 				)
-			),
+			), 
 		);
 	}
 

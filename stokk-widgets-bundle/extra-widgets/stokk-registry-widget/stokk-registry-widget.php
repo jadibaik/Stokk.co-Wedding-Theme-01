@@ -31,17 +31,17 @@ class Stokk_Registry_Widget extends SiteOrigin_Widget {
 				'label' => __('Registry', 'so-widgets-bundle'),
 				'hide' => true,
 				'fields' => array(
-					'registry_title' => array(
+					'title' => array(
 						'type' => 'text',
-						'label' => __('Registry Title', 'so-widgets-bundle'),
+						'label' => __('Title', 'so-widgets-bundle'),
 						'default' => 'Registry',
 					),
-					'registry_subtitle' => array(
+					'subtitle' => array(
 						'type' => 'text',
-						'label' => __('Registry Subtitle', 'so-widgets-bundle'),
+						'label' => __('Subtitle', 'so-widgets-bundle'),
 						'default' => 'SUPPORT OUR NEW FAMILY',
 					),
-					'registry_repeater' => array(
+					'images' => array(
 						'type' => 'repeater',
 						'label' => __( 'Registry Icons' , 'so-widgets-bundle' ),
 						'item_name'  => __( 'Registry Icon', 'so-widgets-bundle' ),
@@ -51,7 +51,7 @@ class Stokk_Registry_Widget extends SiteOrigin_Widget {
 							'value_method' => 'val'
 						),
 						'fields' => array(
-							'repeat_icon' => array(
+							'image' => array(
 								'type' => 'media',
 								'label' => __('Registry Icon', 'so-widgets-bundle'),
 								'library' => 'image',
@@ -60,6 +60,11 @@ class Stokk_Registry_Widget extends SiteOrigin_Widget {
 							'label' => array(
 								'type' => 'text',
 								'label' => __('Label Icon', 'so-widgets-bundle'),
+							),
+							'new_window' => array(
+								'type' => 'checkbox',
+								'default' => false,
+								'label' => __( 'Open in new window', 'so-widgets-bundle' ),
 							),
 						)
 					)
@@ -72,14 +77,14 @@ class Stokk_Registry_Widget extends SiteOrigin_Widget {
 				'fields' => array(
 					'logo' => array(
 						'type' => 'media',
-						'label' => __('Logo Testimonial', 'so-widgets-bundle'),
+						'label' => __('Logo', 'so-widgets-bundle'),
 						'library' => 'image',
 						'fallback' => true,
 					),
 					'description' => array(
 						'type' => 'tinymce',
-						'label' => __( 'Testimonial Description', 'so-widgets-bundle' ),
-						'default' => 'As summer approached, we learned that we would be interning across the street from each other. You can read our love story from each other and give us some comments would great, cheers! HAPPY WEDDING DAY, Wish you all the best <br><br>MIKE - BROTHERS',
+						'label' => __( 'Description', 'so-widgets-bundle' ),
+						'default' => 'As summer approached, we learned that we would be interning across the street from each other. You can read our love story from each other and give us some comments would great, cheers! HAPPY WEDDING DAY, Wish you all the best MIKE - BROTHERS',
 						'rows' => 10,
 						'default_editor' => 'html',
 						'button_filters' => array(
@@ -93,6 +98,40 @@ class Stokk_Registry_Widget extends SiteOrigin_Widget {
 				),
 			),
 		);
+	}
+
+	function stokk_src_image($instance){
+		if ( function_exists( 'wp_get_attachment_image_srcset' ) ) {
+			$srcset = wp_get_attachment_image_src( $instance,$instance['size']);
+			return $srcset;
+		}else{
+			return $instance;
+		}
+	}
+
+	function get_template_variables( $instance, $args ) {
+		$images = isset( $instance['images'] ) ? $instance['images'] : array();
+		
+		foreach ( $images as $image ) {
+			$link_atts = empty( $image['link_attributes'] ) ? array() : $image['link_attributes'];
+			if ( ! empty( $image['new_window'] ) ) {
+				$link_atts['target'] = '_blank';
+				$link_atts['rel'] = 'noopener noreferrer';
+			}
+			$image['link_attributes'] = $link_atts;
+		}
+				
+		return array(
+			'images' => $images,
+			'title' => $instance['registry']['title'],
+			'subtitle' => $instance['registry']['subtitle'],
+
+			'testimonial' => array(
+				'desc'=>$instance['testimonial']['description'],
+				'logo'=>$this->stokk_src_image($instance['testimonial']['logo']),
+			),
+		);
+
 	}
 
 	function get_template_name($instance) {
