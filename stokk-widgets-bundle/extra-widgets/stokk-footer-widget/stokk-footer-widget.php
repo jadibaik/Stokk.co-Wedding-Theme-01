@@ -12,22 +12,59 @@ class Stokk_Footer_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'stokk-footer-widget',
-			__('Stokk Footer Widget', 'hello-world-widget-text-domain'),
+			__('Stokk Footer Widget', 'stokk-footer-widget-text-domain'),
 			array(
-				'description' => __('A Stokk Footer widget.', 'hello-world-widget-text-domain'),
+				'description' => __('A Stokk Footer widget.', 'stokk-footer-widget-text-domain'),
 				'panels_groups' => array('stokk')
 			),
-			array(
-
-			),
-			array(
-				'text' => array(
-					'type' => 'text',
-					'label' => __('Hello world! goes here.', 'hello-world-widget-text-domain'),
-					'default' => 'Hello world!'
-				),
-			),
+			array(),
+			false,
 			plugin_dir_path(__FILE__)
+		);
+	}
+
+	function get_widget_form(){
+		return array(
+			'footer' => array(
+				'type' => 'section',
+				'label' => __('Map', 'so-widgets-bundle'),
+				'item_name'  => __( 'Map', 'so-widgets-bundle' ),
+				'item_label' => array(
+					'selector'     => "[name*='title']",
+					'update_event' => 'change',
+					'value_method' => 'val'
+				),
+				'fields' => array(
+					'url' => array(
+						'type' => 'link',
+						'label' => __('Map URL', 'so-widgets-bundle')
+					),
+					'logo' => array(
+						'type' => 'media',
+						'label' => __('Footer Logo', 'so-widgets-bundle'),
+						'library' => 'image',
+						'fallback' => true,
+					),
+					'background' => array(
+						'type' => 'media',
+						'label' => __('Background Image', 'so-widgets-bundle'),
+						'library' => 'image',
+						'fallback' => true,
+					),
+				)
+			),
+		);
+	}
+	
+	
+	function get_template_variables( $instance, $args ) {
+
+		return array(
+			'footer' => array(
+				'background'=>$this->stokk_src_image($instance['footer']['background']),
+				'logo'=>$this->stokk_src_image($instance['footer']['logo']),
+				'url'=>$instance['footer']['url']
+			),
 		);
 	}
 
