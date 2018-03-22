@@ -41,7 +41,7 @@ class Stokk_Blog_Widget extends SiteOrigin_Widget {
 					),
 					'title' => array(
 						'type' => 'text',
-						'label' => __('Blog title', 'so-widgets-bundle')
+						'label' => __('Blog Title', 'so-widgets-bundle')
 					),
 					'content' => array(
 						'type' => 'tinymce',

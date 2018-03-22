@@ -27,8 +27,8 @@ class Stokk_Gallery_Widget extends SiteOrigin_Widget {
 		return array(
 			'images' => array(
 				'type' => 'repeater',
-				'label' => __('Images', 'so-widgets-bundle'),
-				'item_name'  => __( 'Image', 'so-widgets-bundle' ),
+				'label' => __('Gallery Images', 'so-widgets-bundle'),
+				'item_name'  => __( 'Image ', 'so-widgets-bundle' ),
 				'item_label' => array(
 					'selector'     => "[name*='title']",
 					'update_event' => 'change',
@@ -37,17 +37,17 @@ class Stokk_Gallery_Widget extends SiteOrigin_Widget {
 				'fields' => array(
 					'image' => array(
 						'type' => 'media',
-						'label' => __('Image Carousel', 'so-widgets-bundle'),
+						'label' => __('Image', 'so-widgets-bundle'),
 						'library' => 'image',
 						'fallback' => true,
 					),
 					'images_title' => array(
 						'type' => 'text',
-						'label' => __('Image Title', 'so-widgets-bundle')
+						'label' => __('Title', 'so-widgets-bundle')
 					),
 					'images_subtitle' => array(
 						'type' => 'text',
-						'label' => __('Image Subtitle', 'so-widgets-bundle')
+						'label' => __('Subtitle', 'so-widgets-bundle')
 					),
 					'new_window' => array(
 						'type' => 'checkbox',
