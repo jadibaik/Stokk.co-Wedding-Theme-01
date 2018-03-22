@@ -7,8 +7,8 @@
                 <ul class="countdown_timer text-center">
                     <li class="col-3 col-lg-3">
                         <div class="shape-countdown">
-                            <span class="time"><?php echo esc_attr($days); ?></span>
-                            <span class="meta"> Days </span>
+                            <span class="time"> 01 </span>
+                            <span class="meta"> days </span>
                         </div>
                     </li>
                     <li class="col-3 col-lg-3">

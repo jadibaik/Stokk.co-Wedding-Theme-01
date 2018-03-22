@@ -5,7 +5,7 @@ Widget Name: Stokk Carousel widget
 Description: -
 Author: Stokk.co Team
 Author URI: http://stokk.co
-*/
+*/ 
 
 class Stokk_Carousel_Widget extends SiteOrigin_Widget {
 	function __construct() {
@@ -25,11 +25,7 @@ class Stokk_Carousel_Widget extends SiteOrigin_Widget {
 	}
 
 	function get_widget_form(){
-		
-		
-
 		return array(
-
 			'images' => array(
 				'type' => 'repeater',
 				'label' => __('Images', 'so-widgets-bundle'),

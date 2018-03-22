@@ -8,7 +8,7 @@ Author URI: http://stokk.co
 */
 
 class Stokk_tabProfile_Widget extends SiteOrigin_Widget {
-	function __construct() { 
+	function __construct() {
 
 		parent::__construct(
 			'stokk-tabprofile-widget',

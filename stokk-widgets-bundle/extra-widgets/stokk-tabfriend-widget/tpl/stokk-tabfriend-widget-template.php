@@ -17,14 +17,20 @@
                 <div class="tab-content text-center" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="tab-brides">
                         <div class="card-deck">
+                            <?php if( ! empty( $brides_maid_list ) ) : ?> 
+                                <?php foreach( $brides_maid_list as $image ) : ?>
                             <div class="card">
                                 <div class="card-image"> 
-                                <?php 
-                                if($brides_maid['image_a'][0]){
-                                    echo '<img class="card-img-top" src="'.$brides_maid['image_a'][0].'" alt="Card image cap">';
-                                }
-                                ?>
-                                <div class="show_icon">
+                                
+                                    <?php 
+                                    echo ' <img class="card-img-top"  src="'.
+                                    wp_get_attachment_image( 
+                                        $image['image'],
+                                        'full', 
+                                        false,
+                                        array('name' => $image['name']) ).'" alt="Card image cap">';?>
+
+                                    <div class="show_icon">
                                         <div class="hero-icon_wrapper d-flex align-items-center text-center">
                                             <div class="hero-icon_inner mx-auto">
                                                 <a class="mx-2" href="<?php echo esc_url($brides_maid['fb_link_a']); ?>">
@@ -39,96 +45,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> 
                                 <div class="card-body">
-                                    <h4 class="card-title"><?php echo esc_html($brides_maid['name_a']); ?></h4>
-                                    <p class="card-text"><?php echo esc_html($brides_maid['status_a']); ?></p>
+                                    <h4 class="card-title"><?php echo esc_html($brides_maid['name']); ?></h4>
+                                    <p class="card-text"><?php echo esc_html($brides_maid['status']); ?></p>
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-image"> 
-                                <?php 
-                                if($brides_maid['image_b'][0]){
-                                    echo '<img class="card-img-top" src="'.$brides_maid['image_b'][0].'" alt="Card image cap">';
-                                }
-                                ?>
-                                    <div class="show_icon">
-                                        <div class="hero-icon_wrapper d-flex align-items-center text-center">
-                                            <div class="hero-icon_inner mx-auto">
-                                                <a class="mx-2" href="<?php echo esc_url($brides_maid['fb_link_b']); ?>">
-                                                    <i class="fa fa-facebook"></i>
-                                                </a>
-                                                <a class="mx-2" href="<?php echo esc_url($brides_maid['tw_link_b']); ?>">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                                <a class="mx-2 mr-3" href="<?php echo esc_url($brides_maid['ig_link_b']); ?>">
-                                                    <i class="fa fa-instagram"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title"><?php echo esc_html($brides_maid['name_b']); ?></h4>
-                                    <p class="card-text"><?php echo esc_html($brides_maid['status_b']); ?></p>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-image">
-                                <?php 
-                                if($brides_maid['image_c'][0]){
-                                    echo '<img class="card-img-top" src="'.$brides_maid['image_c'][0].'" alt="Card image cap">';
-                                }
-                                ?>
-                                    <div class="show_icon">
-                                        <div class="hero-icon_wrapper d-flex align-items-center text-center">
-                                            <div class="hero-icon_inner mx-auto">
-                                                <a class="mx-2" href="<?php echo esc_url($brides_maid['fb_link_c']); ?>">
-                                                    <i class="fa fa-facebook"></i>
-                                                </a>
-                                                <a class="mx-2" href="<?php echo esc_url($brides_maid['tw_link_c']); ?>">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                                <a class="mx-2 mr-3" href="<?php echo esc_url($brides_maid['ig_link_c']); ?>">
-                                                    <i class="fa fa-instagram"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title"><?php echo esc_html($brides_maid['name_c']); ?></h4>
-                                    <p class="card-text"><?php echo esc_html($brides_maid['status_c']); ?></p>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-image"> 
-                                <?php 
-                                if($brides_maid['image_d'][0]){
-                                    echo '<img class="card-img-top" src="'.$brides_maid['image_d'][0].'" alt="Card image cap">';
-                                }
-                                ?>
-                                    <div class="show_icon">
-                                        <div class="hero-icon_wrapper d-flex align-items-center text-center">
-                                            <div class="hero-icon_inner mx-auto">
-                                                <a class="mx-2" href="<?php echo esc_url($brides_maid['fb_link_d']); ?>">
-                                                    <i class="fa fa-facebook"></i>
-                                                </a>
-                                                <a class="mx-2" href="<?php echo esc_url($brides_maid['tw_link_d']); ?>">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                                <a class="mx-2 mr-3" href="<?php echo esc_url($brides_maid['ig_link_d']); ?>">
-                                                    <i class="fa fa-instagram"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title"><?php echo esc_html($brides_maid['name_d']); ?></h4>
-                                    <p class="card-text"><?php echo esc_html($brides_maid['status_d']); ?></p>
-                                </div>
-                            </div>
+                                <?php  endforeach; ?>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="tab-pane fade show" id="tab-friends">

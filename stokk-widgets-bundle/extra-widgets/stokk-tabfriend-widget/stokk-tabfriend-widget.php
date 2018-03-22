@@ -35,130 +35,50 @@ class Stokk_tabFriend_Widget extends SiteOrigin_Widget {
 						'label' => __('Tab Title', 'so-widgets-bundle'),
 						'default' => 'BRIDES MAID',
 					),
-					'image_a' => array(
-						'type' => 'media',
-						'label' => __('Foto Brides A', 'so-widgets-bundle'),
-						'library' => 'image',
-						'fallback' => true,
+					'brides_maid_list' => array(
+						'type' => 'repeater',
+						'label' => __('Tab Brides Maid', 'so-widgets-bundle'),
+						'item_name'  => __( 'Brides Maid', 'so-widgets-bundle' ),
+						'item_label' => array(
+							'selector'     => "[name*='name']",
+							'update_event' => 'change',
+							'value_method' => 'val'
+						), 
+						'fields' => array(
+							'image' => array(
+								'type' => 'media',
+								'label' => __('Photo', 'so-widgets-bundle'),
+								'library' => 'image',
+								'fallback' => true,
+							),
+							'name' => array(
+								'type' => 'text',
+								'label' => __('Name', 'so-widgets-bundle'),
+								'default' => 'EVELYN BREWER',
+							),
+							'status' => array(
+								'type' => 'text',
+								'label' => __('Status', 'so-widgets-bundle'),
+								'default' => 'COUSIN',
+							),
+							'fb_link' => array(
+								'type' => 'text',
+								'label' => __('Facebook link', 'so-widgets-bundle'),
+								'default' => 'www.facebook.com',
+							),
+							'tw_link' => array(
+								'type' => 'text',
+								'label' => __('Twitter link', 'so-widgets-bundle'),
+								'default' => 'www.twitter.com',
+							),
+							'ig_link' => array(
+								'type' => 'text',
+								'label' => __('Instagram link', 'so-widgets-bundle'),
+								'default' => 'www.instagram.com',
+							),
+						),
 					),
-					'name_a' => array(
-						'type' => 'text',
-						'label' => __('Name Brides A', 'so-widgets-bundle'),
-						'default' => 'EVELYN BREWER',
-					),
-					'status_a' => array(
-						'type' => 'text',
-						'label' => __('Status Brides A', 'so-widgets-bundle'),
-						'default' => 'COUSIN',
-					),
-					'fb_link_a' => array(
-						'type' => 'text',
-						'label' => __('Facebook link', 'so-widgets-bundle'),
-						'default' => 'www.facebook.com',
-					),
-					'tw_link_a' => array(
-						'type' => 'text',
-						'label' => __('Twitter link', 'so-widgets-bundle'),
-						'default' => 'www.twitter.com',
-					),
-					'ig_link_a' => array(
-						'type' => 'text',
-						'label' => __('Instagram link', 'so-widgets-bundle'),
-						'default' => 'www.instagram.com',
-					),
-					'image_b' => array(
-						'type' => 'media',
-						'label' => __('Foto Brides B', 'so-widgets-bundle'),
-						'library' => 'image',
-						'fallback' => true,
-					),
-					'name_b' => array(
-						'type' => 'text',
-						'label' => __('Name Brides B', 'so-widgets-bundle'),
-						'default' => 'SHARON WARREN',
-					),
-					'status_b' => array(
-						'type' => 'text',
-						'label' => __('Status Brides B', 'so-widgets-bundle'),
-						'default' => 'COUSIN',
-					),
-					'fb_link_b' => array(
-						'type' => 'text',
-						'label' => __('Facebook link', 'so-widgets-bundle'),
-						'default' => 'www.facebook.com',
-					),
-					'tw_link_b' => array(
-						'type' => 'text',
-						'label' => __('Twitter link', 'so-widgets-bundle'),
-						'default' => 'www.twitter.com',
-					),
-					'ig_link_b' => array(
-						'type' => 'text',
-						'label' => __('Instagram link', 'so-widgets-bundle'),
-						'default' => 'www.instagram.com',
-					),
-					'image_c' => array(
-						'type' => 'media',
-						'label' => __('Foto Brides C', 'so-widgets-bundle'),
-						'library' => 'image',
-						'fallback' => true,
-					),
-					'name_c' => array(
-						'type' => 'text',
-						'label' => __('Name Brides C', 'so-widgets-bundle'),
-						'default' => 'SHIRLEY HUNT',
-					),
-					'status_c' => array(
-						'type' => 'text',
-						'label' => __('Status Brides C', 'so-widgets-bundle'),
-						'default' => 'COUSIN',
-					),
-					'fb_link_c' => array(
-						'type' => 'text',
-						'label' => __('Facebook link', 'so-widgets-bundle'),
-						'default' => 'www.facebook.com',
-					),
-					'tw_link_c' => array(
-						'type' => 'text',
-						'label' => __('Twitter link', 'so-widgets-bundle'),
-						'default' => 'www.twitter.com',
-					),
-					'ig_link_c' => array(
-						'type' => 'text',
-						'label' => __('Instagram link', 'so-widgets-bundle'),
-						'default' => 'www.instagram.com',
-					),
-					'image_d' => array(
-						'type' => 'media',
-						'label' => __('Foto Brides D', 'so-widgets-bundle'),
-						'library' => 'image',
-						'fallback' => true,
-					),
-					'name_d' => array(
-						'type' => 'text',
-						'label' => __('Name Brides D', 'so-widgets-bundle'),
-						'default' => 'CAROL BRADLEY',
-					),
-					'status_d' => array(
-						'type' => 'text',
-						'label' => __('Status Brides D', 'so-widgets-bundle'),
-						'default' => 'COUSIN',
-					),
-					'fb_link_d' => array(
-						'type' => 'text',
-						'label' => __('Facebook link', 'so-widgets-bundle'),
-						'default' => 'www.facebook.com',
-					),
-					'tw_link_d' => array(
-						'type' => 'text',
-						'label' => __('Twitter link', 'so-widgets-bundle'),
-						'default' => 'www.twitter.com',
-					),
-					'ig_link_d' => array(
-						'type' => 'text',
-						'label' => __('Instagram link', 'so-widgets-bundle'),
-						'default' => 'www.instagram.com',
-					),
+					
 				)
 			),
 
@@ -172,132 +92,53 @@ class Stokk_tabFriend_Widget extends SiteOrigin_Widget {
 						'label' => __('Tab Title', 'so-widgets-bundle'),
 						'default' => 'Friends & Colleagues',
 					),
-					'image_a' => array(
-						'type' => 'media',
-						'label' => __('Foto Brides A', 'so-widgets-bundle'),
-						'library' => 'image',
-						'fallback' => true,
+					'friends_colleagues_list' => array(
+						'type' => 'repeater',
+						'label' => __('Friends & Colleagues', 'so-widgets-bundle'),
+						'item_name'  => __( 'Friends & Colleagues', 'so-widgets-bundle' ),
+						'item_label' => array(
+							'selector'     => "[name*='name']",
+							'update_event' => 'change',
+							'value_method' => 'val'
+						), 
+						'fields' => array(
+							'image' => array(
+								'type' => 'media',
+								'label' => __('Photo', 'so-widgets-bundle'),
+								'library' => 'image',
+								'fallback' => true,
+							),
+							'name' => array(
+								'type' => 'text',
+								'label' => __('Name', 'so-widgets-bundle'),
+								'default' => 'EVELYN BREWER',
+							),
+							'status' => array(
+								'type' => 'text',
+								'label' => __('Status', 'so-widgets-bundle'),
+								'default' => 'COUSIN',
+							),
+							'fb_link' => array(
+								'type' => 'text',
+								'label' => __('Facebook link', 'so-widgets-bundle'),
+								'default' => 'www.facebook.com',
+							),
+							'tw_link' => array(
+								'type' => 'text',
+								'label' => __('Twitter link', 'so-widgets-bundle'),
+								'default' => 'www.twitter.com',
+							),
+							'ig_link' => array(
+								'type' => 'text',
+								'label' => __('Instagram link', 'so-widgets-bundle'),
+								'default' => 'www.instagram.com',
+							),
+						),
 					),
-					'name_a' => array(
-						'type' => 'text',
-						'label' => __('Name Brides A', 'so-widgets-bundle'),
-						'default' => 'JEFFREY WAGNER',
-					),
-					'status_a' => array(
-						'type' => 'text',
-						'label' => __('Status Brides A', 'so-widgets-bundle'),
-						'default' => 'COUSIN',
-					),
-					'fb_link_a' => array(
-						'type' => 'text',
-						'label' => __('Facebook link', 'so-widgets-bundle'),
-						'default' => 'www.facebook.com',
-					),
-					'tw_link_a' => array(
-						'type' => 'text',
-						'label' => __('Twitter link', 'so-widgets-bundle'),
-						'default' => 'www.twitter.com',
-					),
-					'ig_link_a' => array(
-						'type' => 'text',
-						'label' => __('Instagram link', 'so-widgets-bundle'),
-						'default' => 'www.instagram.com',
-					),
-					'image_b' => array(
-						'type' => 'media',
-						'label' => __('Foto Brides B', 'so-widgets-bundle'),
-						'library' => 'image',
-						'fallback' => true,
-					),
-					'name_b' => array(
-						'type' => 'text',
-						'label' => __('Name Brides B', 'so-widgets-bundle'),
-						'default' => 'SHARON WARREN',
-					),
-					'status_b' => array(
-						'type' => 'text',
-						'label' => __('Status Brides B', 'so-widgets-bundle'),
-						'default' => 'COUSIN',
-					),
-					'fb_link_b' => array(
-						'type' => 'text',
-						'label' => __('Facebook link', 'so-widgets-bundle'),
-						'default' => 'www.facebook.com',
-					),
-					'tw_link_b' => array(
-						'type' => 'text',
-						'label' => __('Twitter link', 'so-widgets-bundle'),
-						'default' => 'www.twitter.com',
-					),
-					'ig_link_b' => array(
-						'type' => 'text',
-						'label' => __('Instagram link', 'so-widgets-bundle'),
-						'default' => 'www.instagram.com',
-					),
-					'image_c' => array(
-						'type' => 'media',
-						'label' => __('Foto Brides C', 'so-widgets-bundle'),
-						'library' => 'image',
-						'fallback' => true,
-					),
-					'name_c' => array(
-						'type' => 'text',
-						'label' => __('Name Brides C', 'so-widgets-bundle'),
-						'default' => 'DANIEL WILLIAMS',
-					),
-					'status_c' => array(
-						'type' => 'text',
-						'label' => __('Status Brides C', 'so-widgets-bundle'),
-						'default' => 'COUSIN',
-					),
-					'fb_link_c' => array(
-						'type' => 'text',
-						'label' => __('Facebook link', 'so-widgets-bundle'),
-						'default' => 'www.facebook.com',
-					),
-					'tw_link_c' => array(
-						'type' => 'text',
-						'label' => __('Twitter link', 'so-widgets-bundle'),
-						'default' => 'www.twitter.com',
-					),
-					'ig_link_c' => array(
-						'type' => 'text',
-						'label' => __('Instagram link', 'so-widgets-bundle'),
-						'default' => 'www.instagram.com',
-					),
-					'image_d' => array(
-						'type' => 'media',
-						'label' => __('Foto Brides D', 'so-widgets-bundle'),
-						'library' => 'image',
-						'fallback' => true,
-					),
-					'name_d' => array(
-						'type' => 'text',
-						'label' => __('Name Brides D', 'so-widgets-bundle'),
-						'default' => 'CAROL BRADLEY',
-					),
-					'status_d' => array(
-						'type' => 'text',
-						'label' => __('Status Brides D', 'so-widgets-bundle'),
-						'default' => 'COUSIN',
-					),
-					'fb_link_d' => array(
-						'type' => 'text',
-						'label' => __('Facebook link', 'so-widgets-bundle'),
-						'default' => 'www.facebook.com',
-					),
-					'tw_link_d' => array(
-						'type' => 'text',
-						'label' => __('Twitter link', 'so-widgets-bundle'),
-						'default' => 'www.twitter.com',
-					),
-					'ig_link_d' => array(
-						'type' => 'text',
-						'label' => __('Instagram link', 'so-widgets-bundle'),
-						'default' => 'www.instagram.com',
-					),
+					
 				)
 			),
+
 			'grooms_men' => array(
 				'type' => 'section',
 				'label' => __('Tab Grooms Men', 'so-widgets-bundle'),
@@ -308,130 +149,50 @@ class Stokk_tabFriend_Widget extends SiteOrigin_Widget {
 						'label' => __('Tab Title', 'so-widgets-bundle'),
 						'default' => 'GROOMS MEN',
 					),
-					'image_a' => array(
-						'type' => 'media',
-						'label' => __('Foto Brides A', 'so-widgets-bundle'),
-						'library' => 'image',
-						'fallback' => true,
+					'grooms_men_list' => array(
+						'type' => 'repeater',
+						'label' => __('Tab GROOMS MEN', 'so-widgets-bundle'),
+						'item_name'  => __( 'GROOMS MEN', 'so-widgets-bundle' ),
+						'item_label' => array(
+							'selector'     => "[name*='name']",
+							'update_event' => 'change',
+							'value_method' => 'val'
+						), 
+						'fields' => array(
+							'image' => array(
+								'type' => 'media',
+								'label' => __('Photo', 'so-widgets-bundle'),
+								'library' => 'image',
+								'fallback' => true,
+							),
+							'name' => array(
+								'type' => 'text',
+								'label' => __('Name', 'so-widgets-bundle'),
+								'default' => 'EVELYN BREWER',
+							),
+							'status' => array(
+								'type' => 'text',
+								'label' => __('Status', 'so-widgets-bundle'),
+								'default' => 'COUSIN',
+							),
+							'fb_link' => array(
+								'type' => 'text',
+								'label' => __('Facebook link', 'so-widgets-bundle'),
+								'default' => 'www.facebook.com',
+							),
+							'tw_link' => array(
+								'type' => 'text',
+								'label' => __('Twitter link', 'so-widgets-bundle'),
+								'default' => 'www.twitter.com',
+							),
+							'ig_link' => array(
+								'type' => 'text',
+								'label' => __('Instagram link', 'so-widgets-bundle'),
+								'default' => 'www.instagram.com',
+							),
+						),
 					),
-					'name_a' => array(
-						'type' => 'text',
-						'label' => __('Name Brides A', 'so-widgets-bundle'),
-						'default' => 'JACOB MUNOZ',
-					),
-					'status_a' => array(
-						'type' => 'text',
-						'label' => __('Status Brides A', 'so-widgets-bundle'),
-						'default' => 'COUSIN',
-					),
-					'fb_link_a' => array(
-						'type' => 'text',
-						'label' => __('Facebook link', 'so-widgets-bundle'),
-						'default' => 'www.facebook.com',
-					),
-					'tw_link_a' => array(
-						'type' => 'text',
-						'label' => __('Twitter link', 'so-widgets-bundle'),
-						'default' => 'www.twitter.com',
-					),
-					'ig_link_a' => array(
-						'type' => 'text',
-						'label' => __('Instagram link', 'so-widgets-bundle'),
-						'default' => 'www.instagram.com',
-					),
-					'image_b' => array(
-						'type' => 'media',
-						'label' => __('Foto Brides B', 'so-widgets-bundle'),
-						'library' => 'image',
-						'fallback' => true,
-					),
-					'name_b' => array(
-						'type' => 'text',
-						'label' => __('Name Brides B', 'so-widgets-bundle'),
-						'default' => 'JEFFREY WAGNER',
-					),
-					'status_b' => array(
-						'type' => 'text',
-						'label' => __('Status Brides B', 'so-widgets-bundle'),
-						'default' => 'COUSIN',
-					),
-					'fb_link_b' => array(
-						'type' => 'text',
-						'label' => __('Facebook link', 'so-widgets-bundle'),
-						'default' => 'www.facebook.com',
-					),
-					'tw_link_b' => array(
-						'type' => 'text',
-						'label' => __('Twitter link', 'so-widgets-bundle'),
-						'default' => 'www.twitter.com',
-					),
-					'ig_link_b' => array(
-						'type' => 'text',
-						'label' => __('Instagram link', 'so-widgets-bundle'),
-						'default' => 'www.instagram.com',
-					),
-					'image_c' => array(
-						'type' => 'media',
-						'label' => __('Foto Brides C', 'so-widgets-bundle'),
-						'library' => 'image',
-						'fallback' => true,
-					),
-					'name_c' => array(
-						'type' => 'text',
-						'label' => __('Name Brides C', 'so-widgets-bundle'),
-						'default' => 'PHILIP BATES',
-					),
-					'status_c' => array(
-						'type' => 'text',
-						'label' => __('Status Brides C', 'so-widgets-bundle'),
-						'default' => 'COUSIN',
-					),
-					'fb_link_c' => array(
-						'type' => 'text',
-						'label' => __('Facebook link', 'so-widgets-bundle'),
-						'default' => 'www.facebook.com',
-					),
-					'tw_link_c' => array(
-						'type' => 'text',
-						'label' => __('Twitter link', 'so-widgets-bundle'),
-						'default' => 'www.twitter.com',
-					),
-					'ig_link_c' => array(
-						'type' => 'text',
-						'label' => __('Instagram link', 'so-widgets-bundle'),
-						'default' => 'www.instagram.com',
-					),
-					'image_d' => array(
-						'type' => 'media',
-						'label' => __('Foto Brides D', 'so-widgets-bundle'),
-						'library' => 'image',
-						'fallback' => true,
-					),
-					'name_d' => array(
-						'type' => 'text',
-						'label' => __('Name Brides D', 'so-widgets-bundle'),
-						'default' => 'DANIEL WILLIAMS',
-					),
-					'status_d' => array(
-						'type' => 'text',
-						'label' => __('Status Brides D', 'so-widgets-bundle'),
-						'default' => 'COUSIN',
-					),
-					'fb_link_d' => array(
-						'type' => 'text',
-						'label' => __('Facebook link', 'so-widgets-bundle'),
-						'default' => 'www.facebook.com',
-					),
-					'tw_link_d' => array(
-						'type' => 'text',
-						'label' => __('Twitter link', 'so-widgets-bundle'),
-						'default' => 'www.twitter.com',
-					),
-					'ig_link_d' => array(
-						'type' => 'text',
-						'label' => __('Instagram link', 'so-widgets-bundle'),
-						'default' => 'www.instagram.com',
-					),
+					
 				)
 			),
 		);
@@ -447,103 +208,20 @@ class Stokk_tabFriend_Widget extends SiteOrigin_Widget {
 	}
 	
 	function get_template_variables( $instance, $args ) {
-
-			
-
-			return array(
-				'brides_maid' => array(
-					'nav_title'=>$instance['brides_maid']['nav_title'],
-					'name_a'=>$instance['brides_maid']['name_a'],
-					'status_a'=>$instance['brides_maid']['status_a'],
-					'image_a'=>$this->stokk_src_image($instance['brides_maid']['image_a']),
-					'fb_link_a'=>$instance['brides_maid']['fb_link_a'],
-					'tw_link_a'=>$instance['brides_maid']['tw_link_a'],
-					'ig_link_a'=>$instance['brides_maid']['ig_link_a'],
-
-					'name_b'=>$instance['brides_maid']['name_b'],
-					'status_b'=>$instance['brides_maid']['status_b'],
-					'image_b'=>$this->stokk_src_image($instance['brides_maid']['image_b']),
-					'fb_link_b'=>$instance['brides_maid']['fb_link_b'],
-					'tw_link_b'=>$instance['brides_maid']['tw_link_b'],
-					'ig_link_b'=>$instance['brides_maid']['ig_link_b'],
-
-					'name_c'=>$instance['brides_maid']['name_c'],
-					'status_c'=>$instance['brides_maid']['status_c'],
-					'image_c'=>$this->stokk_src_image($instance['brides_maid']['image_c']),
-					'fb_link_c'=>$instance['brides_maid']['fb_link_c'],
-					'tw_link_c'=>$instance['brides_maid']['tw_link_c'],
-					'ig_link_c'=>$instance['brides_maid']['ig_link_c'],
-
-					'name_d'=>$instance['brides_maid']['name_d'],
-					'status_d'=>$instance['brides_maid']['status_d'],
-					'image_d'=>$this->stokk_src_image($instance['brides_maid']['image_d']),
-					'fb_link_d'=>$instance['brides_maid']['fb_link_d'],
-					'tw_link_d'=>$instance['brides_maid']['tw_link_d'],
-					'ig_link_d'=>$instance['brides_maid']['ig_link_d']
-				),
-
-				'friends_colleagues' => array(
-					'nav_title'=>$instance['friends_colleagues']['nav_title'],
-					'name_a'=>$instance['friends_colleagues']['name_a'],
-					'status_a'=>$instance['friends_colleagues']['status_a'],
-					'image_a'=>$this->stokk_src_image($instance['friends_colleagues']['image_a']),
-					'fb_link_a'=>$instance['friends_colleagues']['fb_link_a'],
-					'tw_link_a'=>$instance['friends_colleagues']['tw_link_a'],
-					'ig_link_a'=>$instance['friends_colleagues']['ig_link_a'],
-
-					'name_b'=>$instance['friends_colleagues']['name_b'],
-					'status_b'=>$instance['friends_colleagues']['status_b'],
-					'image_b'=>$this->stokk_src_image($instance['friends_colleagues']['image_b']),
-					'fb_link_b'=>$instance['friends_colleagues']['fb_link_b'],
-					'tw_link_b'=>$instance['friends_colleagues']['tw_link_b'],
-					'ig_link_b'=>$instance['friends_colleagues']['ig_link_b'],
-
-					'name_c'=>$instance['friends_colleagues']['name_c'],
-					'status_c'=>$instance['friends_colleagues']['status_c'],
-					'image_c'=>$this->stokk_src_image($instance['friends_colleagues']['image_c']),
-					'fb_link_c'=>$instance['friends_colleagues']['fb_link_c'],
-					'tw_link_c'=>$instance['friends_colleagues']['tw_link_c'],
-					'ig_link_c'=>$instance['friends_colleagues']['ig_link_c'],
-
-					'name_d'=>$instance['friends_colleagues']['name_d'],
-					'status_d'=>$instance['friends_colleagues']['status_d'],
-					'image_d'=>$this->stokk_src_image($instance['friends_colleagues']['image_d']),
-					'fb_link_d'=>$instance['friends_colleagues']['fb_link_d'],
-					'tw_link_d'=>$instance['friends_colleagues']['tw_link_d'],
-					'ig_link_d'=>$instance['friends_colleagues']['ig_link_d']
-				),
-
-				'grooms_men' => array(
-					'nav_title'=>$instance['grooms_men']['nav_title'],
-					'name_a'=>$instance['grooms_men']['name_a'],
-					'status_a'=>$instance['grooms_men']['status_a'],
-					'image_a'=>$this->stokk_src_image($instance['grooms_men']['image_a']),
-					'fb_link_a'=>$instance['grooms_men']['fb_link_a'],
-					'tw_link_a'=>$instance['grooms_men']['tw_link_a'],
-					'ig_link_a'=>$instance['grooms_men']['ig_link_a'],
-
-					'name_b'=>$instance['grooms_men']['name_b'],
-					'status_b'=>$instance['grooms_men']['status_b'],
-					'image_b'=>$this->stokk_src_image($instance['grooms_men']['image_b']),
-					'fb_link_b'=>$instance['grooms_men']['fb_link_b'],
-					'tw_link_b'=>$instance['grooms_men']['tw_link_b'],
-					'ig_link_b'=>$instance['grooms_men']['ig_link_b'],
-
-					'name_c'=>$instance['grooms_men']['name_c'],
-					'status_c'=>$instance['grooms_men']['status_c'],
-					'image_c'=>$this->stokk_src_image($instance['grooms_men']['image_c']),
-					'fb_link_c'=>$instance['grooms_men']['fb_link_c'],
-					'tw_link_c'=>$instance['grooms_men']['tw_link_c'],
-					'ig_link_c'=>$instance['grooms_men']['ig_link_c'],
-
-					'name_d'=>$instance['grooms_men']['name_d'],
-					'status_d'=>$instance['grooms_men']['status_d'],
-					'image_d'=>$this->stokk_src_image($instance['grooms_men']['image_d']),
-					'fb_link_d'=>$instance['grooms_men']['fb_link_d'],
-					'tw_link_d'=>$instance['grooms_men']['tw_link_d'],
-					'ig_link_d'=>$instance['grooms_men']['ig_link_d']
-				),
-			);
+		$brides_maid_list = isset( $instance['brides_maid']['brides_maid_list'] ) ? $instance['brides_maid']['brides_maid_list'] : array();
+				
+				foreach ( $brides_maid_list as $image ) {
+					$link_atts = empty( $image['link_attributes'] ) ? array() : $image['link_attributes'];
+					if ( ! empty( $image['new_window'] ) ) {
+						$link_atts['target'] = '_blank';
+						$link_atts['rel'] = 'noopener noreferrer';
+					}
+					$image['link_attributes'] = $link_atts;
+				}
+				return array(
+					'brides_maid_list' => $brides_maid_list,
+				);
+		
 		}
 
 	function get_template_name($instance) {

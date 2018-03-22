@@ -14,7 +14,7 @@ array(
     ),
     'bride' => array(
         'nav_title'=>$instance['bride']['nav_title'],
-        'nav_subtitle'=>$instance['bride']['nav_subtitle'], 
+        'nav_subtitle'=>$instance['bride']['nav_subtitle'],
         'content_title'=>$instance['bride']['content_title'],
         'content_subtitle'=>$instance['bride']['content_subtitle'],
         'bride_image'=>$this->stokk_src_image($instance['bride']['bride_image']),
@@ -46,7 +46,7 @@ array(
                         <div class="nav-tab-title"><?php echo esc_html($groom['nav_title']); ?></div>
                         <div class="nav-tab-subtitle"><?php echo esc_html($groom['nav_subtitle']); ?></div>
                     </div>
-                </a> 
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-tab active" id="tab-nav-story" data-toggle="pill" href="#tab-story" aria-selected="true">

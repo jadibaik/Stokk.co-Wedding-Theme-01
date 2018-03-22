@@ -1,162 +1,28 @@
 <!-- section blog -->
 <section class="air-block blog-carousel background-metallics" id="blog-slider">
     <!-- Swiper -->
+    <?php if( ! empty( $images_blog ) ) : ?>
     <div class="swiper-container blog-slide-container">
         <div class="swiper-wrapper">
+            <?php foreach( $images_blog as $image ) : ?>
             <div class="swiper-slide">
                 <div class="thumb">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/images/wedding/blog-01.jpg">
+                    <?php echo wp_get_attachment_image( $image['image'],'full', false, array('title' => $image['title']) );?>
                 </div>
                 <div class="overlay">
                     <div class="overlay-meta">Our Love Notes</div>
                     <div class="overlay-title">PERFECT TIME
                         <br> WITH LOVELY COUPLE</div>
                     <div class="overlay-content d-none d-lg-block d-xl-block">
-                        As summer approached, we learned that we would be interning across the street from each other. 
+                       <?php echo esc_html($images_blog['content']); ?><?php echo esc_attr($content); ?>
                     </div>
                     <div class="d-flex">
-                        <a href="#" class="btn btn-empty">READ ALL STORIES</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="swiper-slide">
-                <div class="thumb">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/images/wedding/blog-02.jpg">
-                </div>
-                <div class="overlay">
-                    <div class="overlay-meta">Our Love Notes</div>
-                    <div class="overlay-title">PERFECT TIME
-                        <br> WITH LOVELY COUPLE</div>
-                     <div class="overlay-content d-none d-lg-block d-xl-block">
-                        As summer approached, we learned that we would be interning across the street from each other. 
-                    </div>
-                    <div class="d-flex">
-                        <a href="#" class="btn btn-empty">READ ALL STORIES</a>
+                        <a href="#" class="btn btn-empty"><?php echo esc_attr($button_caption); ?></a>
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide">
-                <div class="thumb">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/images/wedding/blog-03.jpg">
-                </div>
-                <div class="overlay">
-                    <div class="overlay-meta">Our Love Notes</div>
-                    <div class="overlay-title">PERFECT TIME
-                        <br> WITH LOVELY COUPLE</div>
-                     <div class="overlay-content d-none d-lg-block d-xl-block">
-                        As summer approached, we learned that we would be interning across the street from each other. 
-                    </div>
-                    <div class="d-flex">
-                        <a href="#" class="btn btn-empty">READ ALL STORIES</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="swiper-slide">
-                <div class="thumb">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/images/wedding/blog-04.jpg">
-                </div>
-                <div class="overlay">
-                    <div class="overlay-meta">Our Love Notes</div>
-                    <div class="overlay-title">PERFECT TIME
-                        <br> WITH LOVELY COUPLE</div>
-                     <div class="overlay-content d-none d-lg-block d-xl-block">
-                        As summer approached, we learned that we would be interning across the street from each other. 
-                    </div>
-                    <div class="d-flex">
-                        <a href="#" class="btn btn-empty">READ ALL STORIES</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="swiper-slide">
-                <div class="thumb">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/images/wedding/blog-05.jpg">
-                </div>
-                <div class="overlay">
-                    <div class="overlay-meta">Our Love Notes</div>
-                    <div class="overlay-title">PERFECT TIME
-                        <br> WITH LOVELY COUPLE</div>
-                     <div class="overlay-content d-none d-lg-block d-xl-block">
-                        As summer approached, we learned that we would be interning across the street from each other. 
-                    </div>
-                    <div class="d-flex">
-                        <a href="#" class="btn btn-empty">READ ALL STORIES</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="swiper-slide">
-                <div class="thumb">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/images/wedding/blog-06.jpg">
-                </div>
-                <div class="overlay">
-                    <div class="overlay-meta">Our Love Notes</div>
-                    <div class="overlay-title">PERFECT TIME
-                        <br> WITH LOVELY COUPLE</div>
-                    <div class="overlay-content d-none d-lg-block d-xl-block">
-                        As summer approached, we learned that we would be interning across the street from each other. 
-                    </div>
-                    <div class="d-flex">
-                        <a href="#" class="btn btn-empty">READ ALL STORIES</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="swiper-slide">
-                <div class="thumb">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/images/wedding/blog-07.jpg">
-                </div>
-                <div class="overlay">
-                    <div class="overlay-meta">Our Love Notes</div>
-                    <div class="overlay-title">PERFECT TIME
-                        <br> WITH LOVELY COUPLE</div>
-                    <div class="overlay-content d-none d-lg-block d-xl-block">
-                        As summer approached, we learned that we would be interning across the street from each other. 
-                    </div>
-                    <div class="d-flex">
-                        <a href="#" class="btn btn-empty">READ ALL STORIES</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="swiper-slide">
-                <div class="thumb">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/images/wedding/blog-08.jpg">
-                </div>
-                <div class="overlay">
-                    <div class="overlay-meta">Our Love Notes</div>
-                    <div class="overlay-title">PERFECT TIME
-                        <br> WITH LOVELY COUPLE</div>
-                    <div class="overlay-content d-none d-lg-block d-xl-block">
-                        As summer approached, we learned that we would be interning across the street from each other. 
-                    </div>
-                    <div class="d-flex">
-                        <a href="#" class="btn btn-empty">READ ALL STORIES</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="swiper-slide">
-                <div class="thumb">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/images/wedding/blog-09.jpg">
-                </div>
-                <div class="overlay">
-                    <div class="overlay-meta">Our Love Notes</div>
-                    <div class="overlay-title">PERFECT TIME
-                        <br> WITH LOVELY COUPLE</div>
-                    <div class="overlay-content d-none d-lg-block d-xl-block">
-                        As summer approached, we learned that we would be interning across the street from each other. 
-                    </div>
-                    <div class="d-flex">
-                        <a href="#" class="btn btn-empty">READ ALL STORIES</a>
-                    </div>
-                </div>
-
-            </div>
+            <?php endforeach; ?>
         </div>
-        <!-- Add Pagination -->
-        <div class="blog-slide-pagination swiper-pagination mt-3"></div>
     </div>
+    <?php endif; ?>
 </section>
