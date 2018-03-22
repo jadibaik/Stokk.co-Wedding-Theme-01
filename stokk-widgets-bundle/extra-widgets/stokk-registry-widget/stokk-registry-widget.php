@@ -106,7 +106,7 @@ class Stokk_Registry_Widget extends SiteOrigin_Widget {
 			return $srcset;
 		}else{
 			return $instance;
-		}
+		} 
 	}
 
 	function get_template_variables( $instance, $args ) {
@@ -123,8 +123,6 @@ class Stokk_Registry_Widget extends SiteOrigin_Widget {
 				
 		return array(
 			'images' => $images,
-			'title' => $instance['registry']['images']['title'],
-			'label' => $instance['registry']['images']['label'],
 			'title' => $instance['registry']['title'],
 			'subtitle' => $instance['registry']['subtitle'],
 

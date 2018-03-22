@@ -12,10 +12,18 @@
         <?php if( ! empty( $images ) ) : ?>
             <?php foreach( $images as $image ) : ?>
             <div class="col-12 col-lg-2 col-md-3 ml-auto">
-                    <img alt="image" class="img-fluid align-middle pt-5 pt-md-0" src="<?php echo wp_get_attachment_image( $image['image'],'full', false, array('label' => $image['images']['label']) );?>">
+                   
+                    <?php 
+                    echo ' <img alt="image" class="img-fluid align-middle pt-5 pt-md-0" '.
+                    wp_get_attachment_image( 
+                        $image['image'],
+                        'full', 
+                        false,
+                        array('label' => $image['label']) ).'';?>
                 
+            
             </div>
-            <?php endforeach; ?>
+            <?php  endforeach; ?>
         <?php endif; ?>
 
             
