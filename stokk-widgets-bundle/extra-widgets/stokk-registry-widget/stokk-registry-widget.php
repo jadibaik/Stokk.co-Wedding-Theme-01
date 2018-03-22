@@ -110,7 +110,7 @@ class Stokk_Registry_Widget extends SiteOrigin_Widget {
 	}
 
 	function get_template_variables( $instance, $args ) {
-		$images = isset( $instance['images'] ) ? $instance['images'] : array();
+		$images = isset( $instance['registry']['images'] ) ? $instance['registry']['images'] : array();
 		
 		foreach ( $images as $image ) {
 			$link_atts = empty( $image['link_attributes'] ) ? array() : $image['link_attributes'];
@@ -123,6 +123,8 @@ class Stokk_Registry_Widget extends SiteOrigin_Widget {
 				
 		return array(
 			'images' => $images,
+			'title' => $instance['registry']['images']['title'],
+			'label' => $instance['registry']['images']['label'],
 			'title' => $instance['registry']['title'],
 			'subtitle' => $instance['registry']['subtitle'],
 

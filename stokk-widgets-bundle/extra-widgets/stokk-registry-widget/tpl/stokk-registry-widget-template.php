@@ -8,11 +8,17 @@
                     <div class="h3  text-color-primary"><?php echo esc_attr($subtitle); ?></div>
                 </div>
             </div>
+
+        <?php if( ! empty( $images ) ) : ?>
+            <?php foreach( $images as $image ) : ?>
             <div class="col-12 col-lg-2 col-md-3 ml-auto">
-                <a href="#">
-                    <img alt="image" class="img-fluid align-middle pt-5 pt-md-0" src="<?php echo get_template_directory_uri();?>/assets/images/wedding/logo/logo-01.png">
-                </a>
+                    <img alt="image" class="img-fluid align-middle pt-5 pt-md-0" src="<?php echo wp_get_attachment_image( $image['image'],'full', false, array('label' => $image['images']['label']) );?>">
+                
             </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+
+            
         </div>
         <div class="row pt-5">
             <div class="col">
