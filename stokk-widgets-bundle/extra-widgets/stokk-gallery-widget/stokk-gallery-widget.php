@@ -43,11 +43,13 @@ class Stokk_Gallery_Widget extends SiteOrigin_Widget {
 					),
 					'images_title' => array(
 						'type' => 'text',
-						'label' => __('Title', 'so-widgets-bundle')
+						'label' => __('Title', 'so-widgets-bundle'),
+						'default' => 'PREWEDDING'
 					),
 					'images_subtitle' => array(
 						'type' => 'text',
-						'label' => __('Subtitle', 'so-widgets-bundle')
+						'label' => __('Subtitle', 'so-widgets-bundle'),
+						'default' => ' - SAVANNAH | OCTOBER, 21th | 2021'
 					),
 					'new_window' => array(
 						'type' => 'checkbox',
@@ -89,11 +91,14 @@ class Stokk_Gallery_Widget extends SiteOrigin_Widget {
 			$image['link_attributes'] = $link_atts;
 
 		}
-		
+
 		return array(
-			'images' => $images,
 			'title' => $instance['display']['title'],
 			'subtitle' => $instance['display']['subtitle'],
+
+			'images' => array(
+				'gallery_list' =>$instance['images'],
+			),
 		);
 	}
 

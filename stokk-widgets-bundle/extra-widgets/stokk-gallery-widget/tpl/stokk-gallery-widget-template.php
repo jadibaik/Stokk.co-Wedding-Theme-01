@@ -10,22 +10,32 @@
     </div>
 
     <!-- Swiper -->
-  <?php if( ! empty( $images ) ) : ?>
+  <?php if( ! empty( $images['gallery_list'] ) ) : ?>
     <div class="swiper-container gallery-slide-container pt-4">
         <div class="swiper-wrapper my-gallery"> 
-        <?php foreach( $images as $image ) : ?>
+        <?php foreach( $images['gallery_list'] as $gallery ) : ?>
         <p class="imglist">
             
             <div class="swiper-slide">
-                <?php echo wp_get_attachment_image( $image['image'],'full', false, array('title' => $image['title']) );?>
+                    <?php 
+                    
+                        $image = !empty($gallery['image']) ? wp_get_attachment_image_src($gallery['image'],'full')[0] : get_template_directory_uri().'/assets/images/wedding/gallery-01.jpg';
+                        echo '<img src="'.$image.'">';
+                        
+                    ?>
                     <div class="thumb">
-                        <?php echo wp_get_attachment_image( $image['image'],'full', false, array('title' => $image['title']) );?>
+                    <?php 
+                    
+                        $image = !empty($gallery['image']) ? wp_get_attachment_image_src($gallery['image'],'full')[0] : get_template_directory_uri().'/assets/images/wedding/gallery-01.jpg';
+                        echo '<img src="'.$image.'">';
+                        
+                    ?>
+                        
                     </div>
                     <div class="overlay d-flex align-items-center">
                         <div class="gallery-caption mx-auto">
-                            <span>PREWEDDING</span> - SAVANNAH | OCTOBER, 21th | 2020</div>
+                            <span><?php echo esc_html($gallery['images_title']); ?></span><?php echo esc_html($gallery['images_subtitle']); ?></div>
                     </div>
-                </a>
             </div>
             
         </p>

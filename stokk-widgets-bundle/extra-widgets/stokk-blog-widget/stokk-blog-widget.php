@@ -41,12 +41,18 @@ class Stokk_Blog_Widget extends SiteOrigin_Widget {
 					),
 					'title' => array(
 						'type' => 'text',
-						'label' => __('Blog Title', 'so-widgets-bundle')
+						'label' => __('Title', 'so-widgets-bundle'),
+						'default' => 'PERFECT TIME WITH LOVELY COUPLE'
+					),
+					'subtitle' => array(
+						'type' => 'text',
+						'label' => __('Subitle', 'so-widgets-bundle'),
+						'default' => 'Our Love Notes'
 					),
 					'content' => array(
 						'type' => 'tinymce',
 						'label' => __( 'Description', 'so-widgets-bundle' ),
-						'default' => 'As summer approached, we learned that we would be interning across the street from each other. You can read our love story from each other and give us some comments would great, cheers! HAPPY WEDDING DAY, Wish you all the best MIKE - BROTHERS',
+						'default' => ' As summer approached, we learned that we would be interning across the street from each other. ',
 						'rows' => 10,
 						'default_editor' => 'html',
 						'button_filters' => array(
@@ -59,12 +65,13 @@ class Stokk_Blog_Widget extends SiteOrigin_Widget {
 					),
 					'url' => array(
 						'type' => 'link',
-						'label' => __('Button URL', 'so-widgets-bundle')
+						'label' => __('Button URL', 'so-widgets-bundle'),
+						'default' => 'www.example.com'
 					),
-					'button_capton' => array(
+					'button_caption' => array(
 						'type' => 'text',
 						'label' => __('Button Caption', 'so-widgets-bundle'),
-						'default' => 'READ ALL STORIES',
+						'default' => 'READ ALL STORIES'
 					),
 					'new_window' => array(
 						'type' => 'checkbox',
@@ -76,33 +83,22 @@ class Stokk_Blog_Widget extends SiteOrigin_Widget {
 		);
 	}
 
-	function get_template_variables( $instance, $args ) {
-		$images_blog = isset( $instance['images_blog'] ) ? $instance['images_blog'] : array();
-		
-		foreach ( $images_blog as $image ) {
-			$link_atts = empty( $image['link_attributes'] ) ? array() : $image['link_attributes'];
-			if ( ! empty( $image['new_window'] ) ) {
-				$link_atts['target'] = '_blank';
-				$link_atts['rel'] = 'noopener noreferrer';
-			}
-			$image['link_attributes'] = $link_atts;
+	function stokk_src_image($instance){
+		if ( function_exists( 'wp_get_attachment_image_srcset' ) ) {
+			$srcset = wp_get_attachment_image_src( $instance,$instance['size']);
+			return $srcset;
+		}else{
+			return $instance;
 		}
-			
-			return array(
-				'images_blog' => $images_blog,
-				'content' => $instance['images_blog']['content'],
-				'url' => $instance['images_blog']['url'],
-				'button_caption' => $instance['images_blog']['button_caption'],
-			);
+	}
 
-		foreach ($images_blog as $content) {
-			$link_cont = empty($content['link_content']) ? array() : $content['link_content'];
-			if ( ! empty( $content['new_window'])){
-				$link_cont['target'] = '_blank';
-				$link_cont['rel'] = 'noopener noreferrer';
-			}
-			$content['link_content'] = $link_cont;
-		}
+	function get_template_variables( $instance, $args ) {
+
+		return array(
+			'images' => array(
+				'list'=>$instance['images_blog'],
+			),
+		);
 	}
 
 	function get_template_name($instance) {
